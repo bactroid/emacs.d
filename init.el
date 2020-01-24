@@ -643,12 +643,6 @@ Position the cursor at it's beginning, according to the current mode."
  '(powerline-inactive2 ((t (:inherit mode-line-inactive :family "Helvetica Neue"))))
  '(variable-pitch ((t (:family "Helvetica Neue")))))
 
-;; This line is the equivalent of smacking the side of a TV.
-;; If I don't reset, I get gaps when using variable-width typefaces. I tried
-;; to solve this problem off and on, and this turned out to be the easiest
-;; (though definitely not the best) solution.
-;; (powerline-reset)
-
 ;; Stolen from https://blog.d46.us/advanced-emacs-startup/
 ;; Restore garbage collection
 (setq gc-cons-threshold (* 2 1000 1000))
