@@ -368,17 +368,6 @@ Position the cursor at it's beginning, according to the current mode."
 
 (global-set-key (kbd "C-c t s") #'insert-timestamp)
 
-;; Evil Mode
-;;(use-package evil
-  ;;:ensure t
-  ;;:config
-  ;;(evil-mode)
-  ;;(use-package evil-leader
-  ;;:ensure t
-  ;;:config
-  ;;(global-evil-leader-mode)
-  ;;(evil-leader/set-leader "<SPC>")))
-
 ;; Markdown
 
 (use-package markdown-mode
