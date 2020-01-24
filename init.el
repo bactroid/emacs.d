@@ -256,15 +256,6 @@ Version 2015-06-10"
 (eval-after-load "term"
   '(define-key term-raw-map (kbd "C-c C-y") 'term-paste))
 
-;; Set up org mode
-;; (require 'org)
-;; (define-key global-map "\C-cl" 'org-store-link)
-;; (define-key global-map "\C-ca" 'org-agenda)
-;; (setq org-log-done t)
-;; (setq org-agenda-files (list "~/org/todo.org"))
-;; (setq org-default-notes-file (concat org-directory "/notes.org"))
-;; (define-key global-map "\C-cc" 'org-capture)
-
 ;; Trying to get idents working and failing.
 ;; I clearly don't understand Emacs indenting.
 ;; (setq-default indent-tabs-mode nil)
