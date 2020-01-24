@@ -523,57 +523,6 @@ Position the cursor at it's beginning, according to the current mode."
   :init (yas-global-mode 1)
   :bind ("C-c C-c" . 'yas-load-snippet-buffer-and-close))
 
-;; DELETE THIS?
-;; ============
-;; (global-set-key "\C-x\C-m" #'helm-M-x)
-;; (global-set-key "\C-c\C-m" #'helm-M-x)
-
-;; Snippets
-;; (with-eval-after-load 'snippet-mode
-;;   (define-key snippet-mode-map (kbd "C-c C-c") 'yas-load-snippet-buffer-and-close))
-
-;;Setup Projectile Find File
-;; (projectile-global-mode)
-;; (setq projectile-completion-system 'helm)
-;; (helm-projectile-on)
-;; (global-set-key (kbd "s-p") 'helm-projectile-find-file)
-;; (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-;; (add-to-list 'projectile-globally-ignored-directories "node_modules")
-;; (add-to-list 'projectile-globally-ignored-directories "dist")
-;; (setq helm-ff-file-name-history-use-recentf t)
-;; (global-set-key "\C-x\ \C-r" 'helm-recentf)
-;; (helm-adaptive-mode 1)
-
-;; Setup helm
-;; (require 'helm-config)
-
-;; (global-set-key (kbd "M-x") #'helm-M-x)
-;; (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
-;; (global-set-key (kbd "C-x C-f") #'helm-find-files)
-;; (global-set-key (kbd "C-c f f") #'helm-find-files)
-;; (global-set-key (kbd "C-c f n") 'helm-semantic-or-imenu)
-;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ;; Enable tab completion in Helm find files
-;; (define-key helm-map (kbd "C-z") 'helm-select-action)
-;; (helm-mode 1)
-
-;; Powerline setup
-;; (require 'powerline)
-;; (powerline-default-theme)
-;; (setq ns-use-srgb-colorspace nil)
-
-;; (require 'spaceline-config)
-
-;; (spaceline-emacs-theme)
-;; (setq-default
-;;  powerline-height 24
-;;  powerline-default-separator 'wave
-;;  )
-;; (spaceline-toggle-flycheck-error-off)
-;; (spaceline-toggle-flycheck-warning-off)
-;; (spaceline-toggle-flycheck-info-off)
-;; (spaceline-compile)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
