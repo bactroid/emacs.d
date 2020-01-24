@@ -377,14 +377,6 @@ Position the cursor at it's beginning, according to the current mode."
   :ensure t
   :defer t)
 
-;; Set spell check program to aspell.
-;; This is a separate install outside of emacs.
-;; (cond
-;;  ((string-equal system-type "darwin")
-;;   (setq ispell-program-name "/usr/local/bin/aspell"))
-;;  ((string-equal system-type "gnu/linux")
-;;   (setq ispell-program-name "/usr/bin/aspell")))
-
 ;; Turn on typography when I'm writing markdown
 (add-hook 'markdown-mode-hook 'typo-mode)
 ;; (add-hook 'markdown-mode-hook (lambda () (variable-pitch-mode t)))
