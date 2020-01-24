@@ -12,10 +12,6 @@
 ;; Reduce garbage collection frequency during startup
 (setq gc-cons-threshold (* 50 1000 1000))
 
-;; This is needed to handle an Emacs connection issue in 26.3.
-;; At least when I was installing evil mode.
-;; (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
