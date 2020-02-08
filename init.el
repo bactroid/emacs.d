@@ -103,22 +103,6 @@
     (set-char-table-range composition-function-table (car char-regexp)
                           `([,(cdr char-regexp) 0 font-shape-gstring]))))
 
-;; Make Emacs my personal kanban
-(defun todo ()
-  "Open todo files in vertical splits like a kanban."
-  (interactive)
-  (progn
-    (find-file "~/Dropbox/todo/done.txt")
-    (split-window-right)
-    (find-file "~/Dropbox/todo/blockers.txt")
-    (split-window-right)
-    (find-file "~/Dropbox/todo/in-progress.txt")
-    (split-window-right)
-    (find-file "~/Dropbox/todo/todo.txt")
-    (split-window-right)
-    (find-file "~/Dropbox/todo/backlog.txt")
-    (balance-windows)))
-
 ;; Highlight current line
 (global-hl-line-mode 1)
 ;; (set-face-background 'hl-line "#EEEEEE")
