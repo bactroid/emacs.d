@@ -35,10 +35,10 @@
 ;; THEME SETUP
 ;; ============
 
-(use-package solarized-theme
+(use-package one-themes
   :ensure t
   :init
-  (load-theme 'solarized-light t)
+  (load-theme 'one-light t)
   (setq current-theme "light"))
 
 (defun toggle-theme ()
@@ -47,11 +47,11 @@
   (if (string= current-theme "light")
       (progn
         (setq current-theme "dark")
-        (load-theme 'solarized-dark t)
+        (load-theme 'one-dark t)
         (spaceline-compile))
     (progn
       (setq current-theme "light")
-      (load-theme 'solarized-light t)
+      (load-theme 'one-light t)
       (spaceline-compile))))
 
 (defun set-os-specific-options ()
@@ -61,7 +61,7 @@
    ((string-equal system-type "darwin")
     (progn
       (setq ispell-program-name "/usr/local/bin/aspell")
-      (setq preferred-typeface "Fira Code 13")))
+      (setq preferred-typeface "Fira Code 14")))
    ((string-equal system-type "gnu/linux")
     (progn
       (setq ispell-program-name "/usr/bin/aspell")
@@ -527,24 +527,22 @@ Position the cursor at it's beginning, according to the current mode."
  '(helm-ff-lynx-style-map t)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
-   (--map
-    (solarized-color-blend it "#fdf6e3" 0.25)
-    (quote
-     ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
+   (quote
+    ("#efe4da49afb1" "#cfc4e1acd08b" "#fe52c9e6b34e" "#dbb6d3c2dcf3" "#e183dee0b053" "#f944cc6dae47" "#d35fdac4e069")))
  '(highlight-symbol-foreground-color "#586e75")
  '(highlight-tail-colors
    (quote
     (("#eee8d5" . 0)
-     ("#B4C342" . 20)
-     ("#69CABF" . 30)
-     ("#69B7F0" . 50)
-     ("#DEB542" . 60)
-     ("#F2804F" . 70)
-     ("#F771AC" . 85)
+     ("#b3c34d" . 20)
+     ("#6ccec0" . 30)
+     ("#74adf5" . 50)
+     ("#e1af4b" . 60)
+     ("#fb7640" . 70)
+     ("#ff699e" . 85)
      ("#eee8d5" . 100))))
  '(hl-bg-colors
    (quote
-    ("#DEB542" "#F2804F" "#FF6E64" "#F771AC" "#9EA0E5" "#69B7F0" "#69CABF" "#B4C342")))
+    ("#e1af4b" "#fb7640" "#ff6849" "#ff699e" "#8d85e7" "#74adf5" "#6ccec0" "#b3c34d")))
  '(hl-fg-colors
    (quote
     ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
@@ -552,10 +550,10 @@ Position the cursor at it's beginning, according to the current mode."
  '(magit-diff-use-overlays nil)
  '(nrepl-message-colors
    (quote
-    ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+    ("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (evil-leader evil spaceline-config esup js-comint cider clojure-mode yasnippet diminish spaceline rjsx-mode company flycheck typo solarized-theme elm-mode which-key slime helm-projectile helm projectile helm-ebdb pdf-tools neotree atom-one-dark-theme markdown-mode powerline exec-path-from-shell magit js2-mode use-package auto-complete haskell-mode)))
+    (one-themes evil-leader evil spaceline-config esup js-comint cider clojure-mode yasnippet diminish spaceline rjsx-mode company flycheck typo solarized-theme elm-mode which-key slime helm-projectile helm projectile helm-ebdb pdf-tools neotree atom-one-dark-theme markdown-mode powerline exec-path-from-shell magit js2-mode use-package auto-complete haskell-mode)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
@@ -566,27 +564,27 @@ Position the cursor at it's beginning, according to the current mode."
  '(vc-annotate-color-map
    (quote
     ((20 . "#dc322f")
-     (40 . "#c9485ddd1797")
-     (60 . "#bf7e73b30bcb")
+     (40 . "#cb4366eb20b4")
+     (60 . "#c1167942154f")
      (80 . "#b58900")
-     (100 . "#a5a58ee30000")
-     (120 . "#9d9d91910000")
-     (140 . "#9595943e0000")
-     (160 . "#8d8d96eb0000")
+     (100 . "#a6ae8f7c0000")
+     (120 . "#9ed892380000")
+     (140 . "#96be94cf0000")
+     (160 . "#8e5397440000")
      (180 . "#859900")
-     (200 . "#67119c4632dd")
-     (220 . "#57d79d9d4c4c")
-     (240 . "#489d9ef365ba")
-     (260 . "#3963a04a7f29")
+     (200 . "#77679bfc4635")
+     (220 . "#6d449d465bfd")
+     (240 . "#5fc09ea47092")
+     (260 . "#4c68a01784aa")
      (280 . "#2aa198")
-     (300 . "#288e98cbafe2")
-     (320 . "#27c19460bb87")
-     (340 . "#26f38ff5c72c")
+     (300 . "#303498e7affc")
+     (320 . "#2fa1947cbb9b")
+     (340 . "#2c879008c736")
      (360 . "#268bd2"))))
  '(vc-annotate-very-old-color nil)
  '(weechat-color-list
    (quote
-    (unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496")))
+    (unspecified "#fdf6e3" "#eee8d5" "#a7020a" "#dc322f" "#5b7300" "#859900" "#866300" "#b58900" "#0061a8" "#268bd2" "#a00559" "#d33682" "#007d76" "#2aa198" "#657b83" "#839496")))
  '(xterm-color-names
    ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
  '(xterm-color-names-bright
