@@ -28,10 +28,6 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-;; Enable GUI Emacs to get PATH on MacOS
-;;(when (memq window-system '(mac ns))
-;;  (exec-path-from-shell-initialize))
-
 ;; THEME SETUP
 ;; ============
 
