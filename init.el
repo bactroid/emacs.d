@@ -17,6 +17,10 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 
+;; Set up package install
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+
 (package-initialize)
 
 ;; Is use-package installed? If not, please install it.
@@ -25,12 +29,8 @@
   (package-install 'use-package))
 
 ;; Enable GUI Emacs to get PATH on MacOS
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
-
-;; Set up package install
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;;(when (memq window-system '(mac ns))
+;;  (exec-path-from-shell-initialize))
 
 ;; THEME SETUP
 ;; ============
@@ -413,6 +413,13 @@ Position the cursor at it's beginning, according to the current mode."
   :defer t
   :config (setq inferior-lisp-program "/usr/local/bin/sbcl"))
 
+;; Enable GUI Emacs to get PATH on MacOS
+
+(use-package exec-path-from-shell
+  :ensure t
+  :config (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize)))
+
 ;; Other packages we love to see
 
 (use-package atom-one-dark-theme
@@ -422,6 +429,17 @@ Position the cursor at it's beginning, according to the current mode."
   :ensure t
   :defer t
   :init (global-company-mode))
+(use-package diminish
+  :ensure t
+  :config
+  (diminish 'flycheck-mode)
+  (diminish 'auto-complete-mode)
+  (diminish 'company-mode)
+  (diminish 'helm-mode)
+  (diminish 'which-key-mode)
+  (diminish 'eldoc-mode)
+  (diminish 'yas-minor-mode)
+  (diminish 'visual-line-mode))
 (use-package elm-mode
   :ensure t
   :defer t
@@ -589,17 +607,6 @@ Position the cursor at it's beginning, according to the current mode."
    ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
  '(xterm-color-names-bright
    ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"]))
-
-;; Hide minor modes
-(require 'diminish)
-(diminish 'flycheck-mode)
-(diminish 'auto-complete-mode)
-(diminish 'company-mode)
-(diminish 'helm-mode)
-(diminish 'which-key-mode)
-(diminish 'eldoc-mode)
-(diminish 'yas-minor-mode)
-(diminish 'visual-line-mode)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
