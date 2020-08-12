@@ -445,8 +445,7 @@ Position the cursor at it's beginning, according to the current mode."
   :config
   (global-flycheck-mode)
   (setq flycheck-eslintrc "~/.eslintrc")
-  (setq flycheck-stylelintrc "~/.stylelintrc")
-  (defvaralias 'flycheck-python-flake8-executable 'python-shell-interpreter))
+  (setq flycheck-stylelintrc "~/.stylelintrc"))
 (use-package helm
   :ensure t
   :defer t
