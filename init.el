@@ -475,13 +475,6 @@ Position the cursor at it's beginning, according to the current mode."
   :ensure t
   :defer t
   :bind ("C-x g" . 'magit-status))
-(use-package neotree
-  :ensure t
-  :defer t
-  :bind ("s-\\" . neotree-toggle)
-  :config
-  (setq neo-smart-open t)
-  (setq neo-theme 'arrow))
 (use-package pdf-tools
   :ensure t
   :defer t)
@@ -510,6 +503,23 @@ Position the cursor at it's beginning, according to the current mode."
           (spaceline-toggle-flycheck-warning-off)
           (spaceline-toggle-flycheck-info-off)
           (spaceline-compile)))
+(use-package treemacs
+  :ensure t
+  :defer t
+  :config
+  (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
+
+  :bind ("s-\\" . treemacs))
+(use-package treemacs-projectile
+  :after treemacs projectile
+  :ensure t)
+(use-package treemacs-icons-dired
+  :after treemacs dired
+  :ensure t
+  :config (treemacs-icons-dired-mode))
+(use-package treemacs-magit
+  :after treemacs magit
+  :ensure t)
 (use-package which-key
   :ensure t
   :defer t
@@ -566,7 +576,7 @@ Position the cursor at it's beginning, according to the current mode."
     ("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (one-themes evil-leader evil spaceline-config esup js-comint cider clojure-mode yasnippet diminish spaceline rjsx-mode company flycheck typo solarized-theme elm-mode which-key slime helm-projectile helm projectile helm-ebdb pdf-tools neotree atom-one-dark-theme markdown-mode powerline exec-path-from-shell magit js2-mode use-package auto-complete haskell-mode)))
+    (treemacs-magit treemacs-icons-dired treemacs-projectile treemacs one-themes evil-leader evil spaceline-config esup js-comint cider clojure-mode yasnippet diminish spaceline rjsx-mode company flycheck typo solarized-theme elm-mode which-key slime helm-projectile helm projectile helm-ebdb pdf-tools neotree atom-one-dark-theme markdown-mode powerline exec-path-from-shell magit js2-mode use-package auto-complete haskell-mode)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
